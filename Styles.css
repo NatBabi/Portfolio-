@@ -1,6 +1,15 @@
-body {
+/* General Reset */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
   font-family: 'Inter', sans-serif;
+}
+
+/* Body Styles */
+body {
   background-color: #f3f4f6;
+  color: #333;
   padding: 40px 20px;
   transition: background 0.3s, color 0.3s;
 }
@@ -8,6 +17,44 @@ body {
 body.dark-mode {
   background-color: #1f2937;
   color: #f3f4f6;
+}
+
+/* Dark Mode Toggle */
+.dark-toggle {
+  position: fixed;
+  top: 10px;
+  right: 10px;
+  cursor: pointer;
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: white;
+  border-radius: 5px;
+}
+
+.dark-toggle:hover {
+  background-color: #0056b3;
+}
+
+/* Container */
+.container {
+  max-width: 1000px;
+  margin: auto;
+  background-color: #f3f4f6;
+  color: #333;
+  padding: 40px;
+  transition: background 0.3s, color 0.3s;
+}
+
+body.dark-mode .container {
+  background-color: #1f2937;
+  color: #f3f4f6;
+}
+
+/* Profile Section */
+.profile {
+  text-align: center;
+  margin-bottom: 30px;
+  position: relative;
 }
 
 .profile-container {
@@ -20,24 +67,40 @@ body.dark-mode {
   padding: 40px;
 }
 
+body.dark-mode .profile-container {
+  background-color: #1f2937;
+  color: #f3f4f6;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Profile Picture */
 .profile-pic-wrapper {
   background-color: #facc15;
   border-radius: 50%;
-  width: 240px;
-  height: 240px;
+  width: 260px;
+  height: 260px;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
 .profile-pic {
-  width: 220px;
-  height: 220px;
+  width: 240px;
+  height: 240px;
   border-radius: 50%;
   object-fit: cover;
   border: 2px solid white;
 }
 
+body.dark-mode .profile-pic-wrapper i {
+  background-color: #4b5563;
+  color: #f3f4f6;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+/* Profile Text */
 .profile-text {
   display: flex;
   flex-direction: column;
@@ -49,24 +112,114 @@ body.dark-mode {
   margin-bottom: 8px;
 }
 
+body.dark-mode .profile-text h2 {
+  color: #f3f4f6;
+}
+
 .profile-text p {
   font-size: 18px;
   color: #6b7280;
   margin-bottom: 16px;
 }
 
-.social-icons {
+body.dark-mode .profile-text {
+  color: #f3f4f6;
+}
+
+/* Social Links */
+.socials {
   display: flex;
   gap: 12px;
 }
 
-.social-icons i {
+.socials a {
+  margin: 0 10px;
+  color: inherit;
+  font-size: 20px;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.socials i {
   font-size: 20px;
   color: #374151;
   cursor: pointer;
   transition: color 0.3s;
 }
 
-.social-icons i:hover {
-  color: #000;
+.socials a:hover {
+  color: #facc15;
+}
+
+.socials i:hover {
+  color: #facc15;
+}
+
+body.dark-mode .socials a {
+  color: #f3f4f6;
+}
+
+body.dark-mode .socials a:hover {
+  color: #facc15;
+}
+
+/* Settings Icon */
+.settings-icon {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: #f3f4f6;
+  border-radius: 50%;
+  padding: 10px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  transition: transform 0.3s ease, background-color 0.3s ease;
+  z-index: 10;
+}
+
+.settings-icon:hover {
+  transform: rotate(90deg);
+  background-color: #e5e7eb;
+}
+
+.settings-icon i {
+  font-size: 20px;
+  color: #333;
+}
+
+body.dark-mode .settings-icon {
+  background: white;
+  color: white;
+}
+
+/* Stats Section */
+.stats {
+  display: flex;
+  justify-content: center;
+  margin: 20px 0;
+  gap: 30px;
+  flex-wrap: wrap;
+  transition: color 0.3s ease;
+}
+
+.stats div {
+  text-align: center;
+  width: 120px;
+}
+
+.stats div strong {
+  display: block;
+  font-size: 32px;
+  font-weight: bold;
+  color: inherit;
+}
+
+.stats div {
+  font-size: 16px;
+  color: inherit;
+  width: 120px;
+}
+
+.stats:hover {
+  color: #facc15;
 }
