@@ -11,7 +11,7 @@ body {
   background-color: #f3f4f6;
   color: #333;
   padding: 40px 20px;
-  transition: background 0.3s, color 0.3s;
+  transition: background-color 0.3s, color 0.3s;
 }
 
 body.dark-mode {
@@ -42,7 +42,7 @@ body.dark-mode {
   background-color: #f3f4f6;
   color: #333;
   padding: 40px;
-  transition: background 0.3s, color 0.3s;
+  transition: background-color 0.3s, color 0.3s;
 }
 
 body.dark-mode .container {
@@ -71,10 +71,8 @@ body.dark-mode .container {
 body.dark-mode .profile-container {
   background-color: #1f2937;
   color: #f3f4f6;
-  border-radius: 0px;
+  border-radius: 10px;
   padding: 20px;
-  /* transition: background-color 0.3s, color 0.3s; */
-  /* box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); */
 }
 
 /* Profile Picture */
@@ -224,4 +222,125 @@ body.dark-mode .settings-icon {
 
 .stats:hover {
   color: #facc15;
+}
+
+/* Buttons */
+.buttons button,
+.buttons a {
+  margin: 10px;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 6px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.download {
+  background-color: #facc15;
+}
+
+.download:hover {
+  background-color: #eab308;
+}
+
+.contact {
+  background-color: #e5e7eb64;
+}
+
+/* Modal */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-content {
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  max-width: 600px;
+  width: 90%;
+  text-align: center;
+  position: relative;
+}
+
+.modal-content img {
+  max-width: 100%;
+  border-radius: 10px;
+  margin-bottom: 10px;
+}
+
+.modal-content p {
+  font-size: 16px;
+  color: #333;
+}
+
+.dark-mode .modal-content {
+  background: #374151;
+  color: white;
+}
+
+.modal-content input,
+.modal-content textarea {
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0;
+  border: 1px solid #d1d5db;
+  border-radius: 5px;
+}
+
+.dark-mode .modal-content input,
+.dark-mode .modal-content textarea {
+  background: #1f2937;
+  color: white;
+  border: 1px solid #4b5563;
+}
+
+.close-button {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  font-size: 24px;
+  cursor: pointer;
+  color: #333;
+}
+
+/* Primary Button (Submit Button) */
+.btn-primary {
+  display: inline-block;
+  background-color: #facc15;
+  color: #000;
+  font-size: 16px;
+  font-weight: 600;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  text-align: center;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.btn-primary:hover {
+  background-color: #eab308;
+  transform: scale(1.05);
+}
+
+.btn-primary:active {
+  background-color: #d97706;
+  transform: scale(0.95);
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  font-size: 14px;
+  color: #aaa;
+  margin-top: 20px;
 }

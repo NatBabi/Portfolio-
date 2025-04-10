@@ -48,6 +48,32 @@
           <div><strong>10+</strong><br />Completed projects</div>
         </div>
         
+        <div class="buttons">
+          <button class="download" onclick="downloadCV()">Download CV</button>
+          <button class="btn-secondary" onclick="openModal()">
+            Contact Me
+          </button>
+        </div>
+
+        <!-- Contact Modal -->
+      <div id="contactModal" class="modal">
+        <div class="modal-content">
+          <span class="close-button" onclick="closeModal()">×</span>
+          <h2>Contact Me</h2>
+          <form 
+            target="_blank" 
+            action="https://formsubmit.co/ntile312@gmail.com" 
+            method="POST"
+          >
+            <input type="text" placeholder="Your Name" name="name" required />
+            <input type="email" placeholder="Your Email" name="email" required />
+            <textarea placeholder="Your Message" rows="4" name="message"required></textarea>
+            <button type="submit" class="btn-primary">Send Message</button>
+          </form>
+        </div>
+      </div>
+
+      <footer>&copy; Natnael Tilahun, 2025 All rights reserved</footer>
       </div>
     </div>
 
@@ -59,4 +85,3 @@
     
   </body>
 </html>
-
