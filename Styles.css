@@ -230,6 +230,10 @@ body.dark-mode .settings-icon i {
   color: #fbd144;
 }
 
+.stats div strong:hover {
+  color: #fff;
+}
+
 .body.dark-mode .stats div {
   color: #ffe071;
 }
@@ -240,6 +244,7 @@ body.dark-mode .settings-icon i {
   width: 230px;
   height: 70px;
   margin: 30px;
+  margin-top: 10px;
   padding: 10px 20px;
   border: none;
   border-radius: 6px;
@@ -523,7 +528,7 @@ footer {
 /* About Section */
 .about {
   text-align: center;
-  margin: 30px auto;
+  margin: 5px auto;
   padding: 20px;
   max-width: 560px;
   color: #333;
@@ -535,7 +540,7 @@ footer {
   justify-content: center;
   font-size: 26px;
   margin: 10px 0;
-  margin-bottom: 60px;
+  margin-bottom: 20px;
   gap: 50px;
   flex-wrap: wrap;
   transition: color 0.3s ease;
@@ -547,42 +552,4 @@ footer {
   font-size: 36px;
   font-weight: bold;
   color: #575757;
-}
-
-.about-me {
-  text-align: center;
-  margin: 30px auto;
-  padding: 20px;
-  max-width: 600px; /* Matches the width of the tab bar */
-  background-color: #e5e5e5; /* Light background for contrast */
-  border-radius: 15px;
-
-  transition: box-shadow 0.3s ease, border 0.3s ease, background-color 0.3s ease;
-}
-
-.about-me h2 {
-  font-size: 24px;
-  margin-bottom: 15px;
-  color: #333;
-}
-
-.about-me p {
-  font-size: 16px;
-  line-height: 1.6;
-  color: #555;
-  text-align: justify; /* Makes the text look more professional */
-}
-
-/* Dark Mode Styles */
-body.dark-mode .about-me {
-  background-color: #1f2937; /* Dark background for dark mode */
-}
-
-body.dark-mode .about-me h2,
-body.dark-mode .about-me p {
-  color: #575757; /* Ensure text is visible in dark mode */
-}
-
-body.dark-mode .about-me:hover {
-  box-shadow: 0 0 20px #ffe071, 0 0 40px #ffe071; /* Stronger glow on hover */
 }
