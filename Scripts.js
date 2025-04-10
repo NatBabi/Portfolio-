@@ -16,3 +16,14 @@ function downloadCV() {
   link.download = 'My-Resume.pdf';
   link.click();
 }
+
+function switchTab(tabName) {
+  document
+    .querySelectorAll('.tabs button')
+    .forEach((btn) => btn.classList.remove('active'));
+  document
+    .querySelectorAll('.portfolio, .skills')
+    .forEach((tab) => tab.classList.remove('active'));
+  document.querySelector(`#${tabName}`).classList.add('active');
+  event.target.classList.add('active');
+}

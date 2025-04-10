@@ -49,7 +49,7 @@
         </div>
         
         <div class="buttons">
-          <button class="download" onclick="downloadCV()">Download CV</button>
+          <button class="download" onclick="downloadCV()">Download CV  <i class="fa-solid fa-download"></i></button>
           <button class="btn-secondary" onclick="openModal()">
             Contact Me
           </button>
@@ -70,6 +70,47 @@
             <textarea placeholder="Your Message" rows="4" name="message"required></textarea>
             <button type="submit" class="btn-primary">Send Message</button>
           </form>
+        </div>
+      </div>
+
+      <div class="tabs">
+        <button class="active" onclick="switchTab('portfolio')">
+          Portfolio
+        </button>
+        <button onclick="switchTab('skills')">Skills</button>
+      </div>
+
+      <div class="portfolio active" id="portfolio">
+        <img
+          src="Icons/school website design online modern school.jfif"
+          alt="Description for Project 1"
+          
+        />
+        <img
+          src="Icons/School website Design online modern School.jfif"
+          alt="Description for Project 2"
+         
+        />
+        <img
+          src="Icons/school website design online modern school.jfif"
+          alt="Description for Project 3"
+          
+        />
+        <img
+          src="Icons/school website design online modern school.jfif"
+          alt="Description for Project 4"
+         
+        />
+      </div>
+
+      <div class="skills" id="skills">
+        <div>
+          <i class="fa-brands fa-html5"></i>
+          <i class="fa-brands fa-css3"></i>
+          <i class="fa-brands fa-js"></i>
+          <i class="fa-brands fa-react"></i>
+          <i class="fa-brands fa-node-js"></i>
+          <i class="fa-brands fa-php"></i>
         </div>
       </div>
 
