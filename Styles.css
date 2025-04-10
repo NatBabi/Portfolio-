@@ -65,14 +65,16 @@ body.dark-mode .container {
   position: relative;
   background-color: #f3f4f6;
   padding: 40px;
+  transition: background-color 0.3s, color 0.3s;
 }
 
 body.dark-mode .profile-container {
   background-color: #1f2937;
   color: #f3f4f6;
-  border-radius: 10px;
+  border-radius: 0px;
   padding: 20px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  /* transition: background-color 0.3s, color 0.3s; */
+  /* box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); */
 }
 
 /* Profile Picture */
