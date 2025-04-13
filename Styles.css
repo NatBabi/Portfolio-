@@ -3,7 +3,7 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-  font-family: 'Inter', sans-serif;
+  font-family: 'Poppins', sans-serif;
 }
 
 /* Body Styles */
@@ -41,7 +41,7 @@ body.dark-mode {
   margin: auto;
   background-color: #e5e5e5;
   color: #333;
-  padding: 40px;
+  padding: 5vw;
   transition: background-color 0.3s, color 0.3s;
 }
 
@@ -80,8 +80,9 @@ body.dark-mode .profile-container {
 .profile-pic-wrapper {
   background-color: #fbd144;
   border-radius: 50%;
-  width: 260px;
-  height: 260px;
+  width: 100%;
+  max-width: 260px;
+  aspect-ratio: 1/1;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -106,6 +107,8 @@ body.dark-mode .profile-pic-wrapper i {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  align-items: center;
+  text-align: center;
 }
 
 .profile-text h2 {
@@ -552,4 +555,68 @@ footer {
   font-size: 36px;
   font-weight: bold;
   color: #575757;
+}
+
+@media (max-width: 768px) {
+  .profile-container {
+    flex-direction: column;
+    gap: 20px;
+    padding: 20px;
+  }
+
+  .profile-pic-wrapper {
+    width: 200px;
+    height: 200px;
+  }
+
+  .profile-pic {
+    width: 180px;
+    height: 180px;
+  }
+
+  .profile-text h2 {
+    font-size: 24px;
+  }
+
+  .profile-text p {
+    font-size: 16px;
+    text-align: center;
+  }
+
+  .buttons {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+    margin-top: 20px;
+  }
+
+  .buttons button,
+  .buttons a {
+    margin: 10px;
+    width: 45%;
+    height: auto;
+  }
+
+  /* Tabs bar buttons responsive */
+  .tabs {
+    flex-wrap: wrap;
+    gap: 10px;
+    height: auto;
+  }
+
+  .tabs button {
+    flex: 1 1 45%;
+    margin: 5px 0;
+    padding: 14px;
+    font-size: 14px;
+  }
+
+  .portfolio {
+    grid-template-columns: 1fr;
+  }
+
+  .skills {
+    flex-direction: column;
+  }
 }
