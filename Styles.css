@@ -61,7 +61,7 @@ body.dark-mode .container {
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 30px;
+  gap: 80px;
   position: relative;
   background-color: #e5e5e5;
   padding: 40px;
