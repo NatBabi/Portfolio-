@@ -167,18 +167,18 @@ body.dark-mode .socials a:hover {
   color: #fbd144;
 }
 
-/* Settings Icon */
+/* Update .settings-icon */
 .settings-icon {
-  position: absolute;
+  position: absolute; /* <-- changed from absolute to fixed */
   top: 10px;
-  right: 10px;
+  right: 10px; /* <-- changed from right to left */
   background: #e5e5e5;
   border-radius: 50%;
   padding: 10px;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
   cursor: pointer;
   transition: transform 0.3s ease, background-color 0.3s ease;
-  z-index: 10;
+  z-index: 9999; /* ensures it stays on top */
 }
 
 .settings-icon:hover {
@@ -242,17 +242,25 @@ body.dark-mode .settings-icon i {
 }
 
 /* Buttons */
+.buttons {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap; /* allow wrapping on small screens */
+  justify-content: center;
+  margin-top: 2rem;
+}
+
 .buttons button,
 .buttons a {
-  width: 230px;
-  height: 70px;
-  margin: 30px;
-  margin-top: 10px;
-  padding: 10px 20px;
+  padding: 0.6rem 1rem;
+  font-size: 0.9rem;
   border: none;
-  border-radius: 6px;
-  font-size: 16px;
-  cursor: pointer;
+  background-color: #fbd144;
+  color: white;
+  border-radius: 8px;
+  text-decoration: none;
+  text-align: center;
+  flex: 1 1 120px; /* flexible width with a min base */
 }
 
 .download {
@@ -618,5 +626,28 @@ footer {
 
   .skills {
     flex-direction: column;
+  }
+}
+
+/* Stack vertically on tiny screens */
+@media (max-width: 320px) {
+  .buttons {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .buttons button,
+  .buttons a {
+    width: 100%; /* Full width */
+  }
+}
+
+/* For screens larger than 600px */
+@media (min-width: 601px) {
+  .buttons button,
+  .buttons a {
+    width: 230px;
+    height: 70px;
+    font-size: 1rem; /* Optional: slightly bigger font */
   }
 }
