@@ -244,23 +244,24 @@ body.dark-mode .settings-icon i {
 /* Buttons */
 .buttons {
   display: flex;
-  gap: 1rem;
-  flex-wrap: wrap; /* allow wrapping on small screens */
   justify-content: center;
-  margin-top: 2rem;
+  gap: 20px;
+  flex-wrap: wrap;
+  margin-top: 20px;
 }
 
 .buttons button,
 .buttons a {
-  padding: 0.6rem 1rem;
-  font-size: 0.9rem;
+  width: 100%; /* Full width by default */
+  max-width: 600px; /* Matches the width of the tab */
+  padding: 10px 20px;
+  font-size: 16px;
   border: none;
   background-color: #fbd144;
   color: white;
   border-radius: 8px;
-  text-decoration: none;
   text-align: center;
-  flex: 1 1 120px; /* flexible width with a min base */
+  transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
 .download {
@@ -274,7 +275,7 @@ body.dark-mode .settings-icon i {
 
 .btn-secondary {
   background-color: #fff;
-  transition: background-color 0.3s, color 0.3s;
+  color: #333;
 }
 
 .btn-secondary:hover {
@@ -565,6 +566,7 @@ footer {
   color: #575757;
 }
 
+/* Responsive Adjustments */
 @media (max-width: 768px) {
   .profile-container {
     flex-direction: column;
@@ -601,9 +603,7 @@ footer {
 
   .buttons button,
   .buttons a {
-    margin: 10px;
-    width: 45%;
-    height: auto;
+    width: 90%; /* Reduce width slightly for smaller screens */
   }
 
   /* Tabs bar buttons responsive */
