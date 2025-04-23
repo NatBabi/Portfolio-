@@ -76,6 +76,50 @@
         </div>
       </div>
 
+      <!-- Modal for Portfolio -->
+      <div id="portfolioModal" class="modal">
+        <div class="modal-content">
+          <span class="close-button" onclick="closeModal()">×</span>
+          <img id="modalImage" src="" alt="Project Image" />
+          <h3 id="modalTitle">Project Title</h3>
+          <p id="modalDescription">Project Description</p>
+          <p id="modalTechStack"><strong>Tech Stack:</strong> Tech stack details</p>
+        </div>
+      </div>
+
+      <!-- Modal for SparkDev -->
+      <div id="portfolioModal" class="modal">
+        <div class="modal-content">
+          <!-- Close Button -->
+          <span class="close-button" onclick="closeModal()">×</span>
+
+          <!-- Header Section -->
+          <h2>SparkDev</h2>
+
+          <!-- Image Preview -->
+          <img
+            id="modalImage"
+            src="Icons/sparkdev-sample.png"
+            alt="SparkDev Project Preview"
+            class="modal-image"
+          />
+
+          <!-- Description -->
+          <p id="modalDescription">
+            Custom web development agency site with portfolio showcase and service
+            offerings.
+          </p>
+
+          <!-- Tech Stack -->
+          <div id="modalTechStack" class="tech-stack">
+            <span class="badge">React</span>
+            <span class="badge">Node.js</span>
+            <span class="badge">MongoDB</span>
+            <span class="badge">AWS</span>
+          </div>
+        </div>
+      </div>
+
       <div class="tabs">
         <button class="active" onclick="switchTab('portfolio')">
           Portfolio
@@ -83,27 +127,20 @@
         <button onclick="switchTab('skills')">Skills</button>
       </div>
 
+      <!-- Portfolio Section -->
       <div class="portfolio active" id="portfolio">
-        <img
-          src="Icons/school website design online modern school.jfif"
-          alt="Description for Project 1"
-          
-        />
-        <img
-          src="Icons/School website Design online modern School.jfif"
-          alt="Description for Project 2"
-         
-        />
-        <img
-          src="Icons/school website design online modern school.jfif"
-          alt="Description for Project 3"
-          
-        />
-        <img
-          src="Icons/school website design online modern school.jfif"
-          alt="Description for Project 4"
-         
-        />
+        <div class="project" onclick="openModal('Icons/school website design online modern school.jfif', 'School Website Design', 'A modern school website with responsive design.', 'HTML, CSS, JavaScript')">
+          <img src="Icons/school website design online modern school.jfif" alt="School Website Design" />
+        </div>
+        <div class="project" onclick="openModal('Icons/School website Design online modern School.jfif', 'Online School Platform', 'A platform for online learning and course management.', 'React, Node.js, MongoDB')">
+          <img src="Icons/School website Design online modern School.jfif" alt="Online School Platform" />
+        </div>
+        <div class="project" onclick="openModal('Icons/school website design online modern school.jfif', 'E-Learning Dashboard', 'A dashboard for managing e-learning content.', 'Python, Django, PostgreSQL')">
+          <img src="Icons/school website design online modern school.jfif" alt="E-Learning Dashboard" />
+        </div>
+        <div class="project" onclick="openModal('Icons/school website design online modern school.jfif', 'Cloud-Based School Management', 'A cloud-based solution for school management.', 'AWS, React, Express')">
+          <img src="Icons/school website design online modern school.jfif" alt="Cloud-Based School Management" />
+        </div>
       </div>
 
       <div class="skills" id="skills">
@@ -127,4 +164,5 @@
     
   </body>
 </html>
+``` 
 

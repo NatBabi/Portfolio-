@@ -2,12 +2,28 @@ function toggleDarkMode() {
   document.body.classList.toggle('dark-mode');
 }
 
-function openModal() {
-  document.getElementById('contactModal').style.display = 'flex';
+function openModal(imageSrc, title, description, techStack) {
+  const modal = document.getElementById('portfolioModal');
+  document.getElementById('modalImage').src = imageSrc;
+  document.querySelector('.modal-content h2').textContent = title;
+  document.getElementById('modalDescription').textContent = description;
+
+  // Populate tech stack badges
+  const techStackContainer = document.getElementById('modalTechStack');
+  techStackContainer.innerHTML = ''; // Clear previous badges
+  techStack.split(', ').forEach((tech) => {
+    const badge = document.createElement('span');
+    badge.className = 'badge';
+    badge.textContent = tech;
+    techStackContainer.appendChild(badge);
+  });
+
+  modal.style.display = 'flex';
 }
 
 function closeModal() {
-  document.getElementById('contactModal').style.display = 'none';
+  const modal = document.getElementById('portfolioModal');
+  modal.style.display = 'none';
 }
 
 function downloadCV() {

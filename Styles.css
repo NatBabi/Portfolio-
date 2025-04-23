@@ -155,7 +155,7 @@ body.dark-mode .profile-text {
   color: #fbd144;
 }
 
-.socials i:hover {
+socials i:hover {
   color: #fbd144;
 }
 
@@ -453,54 +453,71 @@ body.dark-mode .skills i:hover {
 }
 
 .modal-content {
-  background: #e5e5e5;
-  padding: 20px;
+  background: #1f2937;
+  padding: 30px;
   border-radius: 10px;
   max-width: 600px;
   width: 90%;
   text-align: center;
   position: relative;
+  color: #e5e5e5;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+.modal-content h2 {
+  font-size: 24px;
+  margin-bottom: 20px;
+  color: #ffd700; /* Yellow highlight */
 }
 
 .modal-content img {
   max-width: 100%;
   border-radius: 10px;
-  margin-bottom: 10px;
+  margin-bottom: 20px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 }
 
 .modal-content p {
   font-size: 16px;
-  color: #333;
+  margin-bottom: 20px;
+  line-height: 1.6;
 }
 
-.dark-mode .modal-content {
-  background: #374151;
-  color: white;
+.modal-content .tech-stack {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  flex-wrap: wrap;
 }
 
-.modal-content input,
-.modal-content textarea {
-  width: 100%;
-  padding: 10px;
-  margin: 10px 0;
-  border: 1px solid #d1d5db;
-  border-radius: 5px;
+.modal-content .badge {
+  background-color: #2563eb; /* Blue badge background */
+  color: #fff;
+  padding: 5px 10px;
+  border-radius: 20px;
+  font-size: 14px;
+  font-weight: 600;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.dark-mode .modal-content input,
-.dark-mode .modal-content textarea {
-  background: #1f2937;
-  color: #e5e5e5;
-  border: 1px solid #4b5563;
+.modal-content .badge:hover {
+  transform: scale(1.1);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
 }
 
-.close-button {
+.modal-content .close-button {
   position: absolute;
   top: 10px;
   right: 15px;
   font-size: 24px;
   cursor: pointer;
-  color: #333;
+  color: #e5e5e5;
+  transition: color 0.3s ease;
+}
+
+.modal-content .close-button:hover {
+  color: #ffd700; /* Yellow highlight on hover */
 }
 
 /* Primary Button (Submit Button) */
