@@ -2,7 +2,7 @@ function toggleDarkMode() {
   document.body.classList.toggle('dark-mode');
 }
 
-function openModal(imageSrc, title, description, techStack) {
+function openModal(imageSrc, title, description, techStack, githubLink) {
   const modal = document.getElementById('portfolioModal');
   document.getElementById('modalImage').src = imageSrc;
   document.querySelector('.modal-content h2').textContent = title;
@@ -17,6 +17,17 @@ function openModal(imageSrc, title, description, techStack) {
     badge.textContent = tech;
     techStackContainer.appendChild(badge);
   });
+
+  // Add GitHub link
+  const githubLinkContainer = document.getElementById('modalGithubLink');
+  githubLinkContainer.innerHTML = ''; // Clear previous link
+  if (githubLink) {
+    const link = document.createElement('a');
+    link.href = githubLink;
+    link.textContent = 'View on GitHub';
+    link.target = '_blank';
+    githubLinkContainer.appendChild(link);
+  }
 
   modal.style.display = 'flex';
 }
