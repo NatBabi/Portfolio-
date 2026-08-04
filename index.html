@@ -32,7 +32,7 @@
           </div>
 
           <div class="profile-text">
-            <h2>Natnael Tilahun</h1>
+            <h2>Natnael Tilahun</h2>
             <p>Computer Science Student</p>
             <div class="socials">
               <a href="https://www.linkedin.com/in/Nat-tile"><i class="fa-brands fa-linkedin"></i></a>
@@ -53,7 +53,7 @@
 
         <div class="buttons">
           <button class="download" onclick="downloadCV()">Download CV  <i class="fa-solid fa-download"></i></button>
-          <button class="btn-secondary" onclick="openModal()">
+          <button class="btn-secondary" onclick="openContactModal()">
             Contact Me
           </button>
         </div>
@@ -81,43 +81,10 @@
         <div class="modal-content">
           <span class="close-button" onclick="closeModal()">×</span>
           <img id="modalImage" src="" alt="Project Image" />
-          <h3 id="modalTitle">Project</h3>
+          <h2 id="modalTitle">Project</h2>
           <p id="modalDescription">Project Description</p>
-          <p id="modalTechStack"><strong>Tech Stack:</strong> Tech stack details</p>
-          <div id="modalGithubLink"></div> <!-- Added container for GitHub link -->
-        </div>
-      </div>
-
-      <!-- Modal for SparkDev -->
-      <div id="portfolioModal" class="modal">
-        <div class="modal-content">
-          <!-- Close Button -->
-          <span class="close-button" onclick="closeModal()">×</span>
-
-          <!-- Header Section -->
-          <h2>SparkDev</h2>
-
-          <!-- Image Preview -->
-          <img
-            id="modalImage"
-            src="Icons/sparkdev-sample.png"
-            alt="SparkDev Project Preview"
-            class="modal-image"
-          />
-
-          <!-- Description -->
-          <p id="modalDescription">
-            Custom web development agency site with portfolio showcase and service
-            offerings.
-          </p>
-
-          <!-- Tech Stack -->
-          <div id="modalTechStack" class="tech-stack">
-            <span class="badge">React</span>
-            <span class="badge">Node.js</span>
-            <span class="badge">MongoDB</span>
-            <span class="badge">AWS</span>
-          </div>
+          <div id="modalTechStack" class="tech-stack"></div>
+          <div id="modalGithubLink" style="margin-top: 15px;"></div>
         </div>
       </div>
 

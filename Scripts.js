@@ -32,15 +32,22 @@ function openModal(imageSrc, title, description, techStack, githubLink) {
   modal.style.display = 'flex';
 }
 
+function openContactModal() {
+  const modal = document.getElementById('contactModal');
+  if (modal) modal.style.display = 'flex';
+}
+
 function closeModal() {
-  const modal = document.getElementById('portfolioModal');
-  modal.style.display = 'none';
+  const portfolioModal = document.getElementById('portfolioModal');
+  const contactModal = document.getElementById('contactModal');
+  if (portfolioModal) portfolioModal.style.display = 'none';
+  if (contactModal) contactModal.style.display = 'none';
 }
 
 function downloadCV() {
   const link = document.createElement('a');
   link.href = 'My-Resume.pdf';
-  link.download = 'My-Resume.pdf';
+  link.download = 'Natnael_Tilahun_Resume.pdf';
   link.click();
 }
 
