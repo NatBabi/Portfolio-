@@ -13,34 +13,39 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
     />
 
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
     <link rel="stylesheet" href="Styles.css" />
   </head>
   <body>
+    <nav class="top-nav">
+      <div class="nav-brand">NatTile<span>.</span></div>
+      <div class="nav-links">
+        <a href="#portfolio">Projects</a>
+        <a href="#skills">Skills</a>
+        <a href="#contact">Contact</a>
+      </div>
+      <button class="nav-resume-btn" onclick="downloadCV()"><i class="fa-solid fa-download"></i> Resume</button>
+    </nav>
     <div class="settings-icon" onclick="toggleDarkMode()" title="Toggle Dark/Light Mode" aria-label="Toggle Dark/Light Mode">
       <i class="fa-solid fa-moon" id="themeIcon"></i>
     </div>
     <div class="container">
       <div class="profile">
         
-        <div class="profile-container">
-          <div class="profile-pic-wrapper">
-            <img
-              src="Icons/ProfilePicturepng.jpg"
-              alt="Profile Picture"
-              class="profile-pic"
-            />
+        <div class="hero-section pattern-bg">
+          <div class="availability-badge">
+            <span class="status-dot"></span> AVAILABLE FOR NEW PROJECTS
           </div>
-
-          <div class="profile-text">
-            <h2>Natnael Tilahun</h2>
-            <p>Computer Science Graduate</p>
-            <div class="socials">
-              <a href="https://www.linkedin.com/in/Nat-tile"><i class="fa-brands fa-linkedin"></i></a>
-              <a href="https://github.com/NatBabi"><i class="fa-brands fa-github"></i></a>
-              <a href="https://x.com/NTilahun14"><i class="fa-brands fa-x-twitter"></i></a>
-            </div>
+          <h1 class="hero-title">
+            HI, I'M <img src="Icons/ProfilePicturepng.jpg" alt="Profile Picture" class="inline-profile-pic" /> NATNAEL<br>TILAHUN
+          </h1>
+          <p class="hero-subtitle">Creative Backend & IT Support Guy</p>
+          <div class="socials hero-socials">
+            <a href="https://www.linkedin.com/in/Nat-tile"><i class="fa-brands fa-linkedin"></i></a>
+            <a href="https://github.com/NatBabi"><i class="fa-brands fa-github"></i></a>
+            <a href="https://x.com/NTilahun14"><i class="fa-brands fa-x-twitter"></i></a>
+            <a href="#"><i class="fa-solid fa-envelope"></i></a>
           </div>
-
         </div>
 
         <!-- About Section -->
@@ -52,7 +57,6 @@
         </div>
 
         <div class="buttons">
-          <button class="download" onclick="downloadCV()">Download CV  <i class="fa-solid fa-download"></i></button>
           <button class="btn-secondary" onclick="openContactModal()">
             Contact Me
           </button>
@@ -85,49 +89,102 @@
         </div>
       </div>
 
-      <!-- Modal for Portfolio -->
-      <div id="portfolioModal" class="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
-        <div class="modal-content">
-          <span class="close-button" onclick="closeModal()" aria-label="Close">×</span>
-          <img id="modalImage" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg'/%3E" alt="Project Image" />
-          <h2 id="modalTitle">Project</h2>
-          <p id="modalDescription">Project Description</p>
-          <div id="modalTechStack" class="tech-stack"></div>
-          <div id="modalGithubLink" style="margin-top: 15px;"></div>
-        </div>
-      </div>
 
-      <div class="tabs">
-        <button class="active" onclick="switchTab('portfolio')">
-          Portfolio
-        </button>
-        <button onclick="switchTab('skills')">Skills</button>
-      </div>
+
+      <div class="pattern-bg">
+        <div class="section-header" id="portfolio">
+          <h2>PROJECTS</h2>
+          <div class="section-divider"></div>
+        </div>
 
       <!-- Portfolio Section -->
-      <div class="portfolio active" id="portfolio">
-        <div class="project" onclick="openModal('Icons/Online_Banking.png', 'Online_Banking', 'Streamlines communication and resource sharing for schools.', 'React, Node.js, MongoDB', 'https://github.com/NatBabi/Online-Banking')">
-          <img src="Icons/Online_Banking.png" alt="Online_Banking" />
+      <div class="swiper portfolio-swiper">
+        <div class="swiper-wrapper">
+          
+          <div class="swiper-slide project-card">
+            <img src="Icons/Online_Banking.png" alt="Online_Banking" class="project-image" />
+            <div class="project-content">
+              <h3 class="project-title">ONLINE BANKING</h3>
+              <p class="project-desc">Streamlines communication and resource sharing for schools.</p>
+              <div class="project-tech">
+                <span class="tech-tag">REACT</span>
+                <span class="tech-tag">NODE.JS</span>
+                <span class="tech-tag">MONGODB</span>
+              </div>
+              <div class="project-actions">
+                <a href="#" class="btn-site">SITE <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                <a href="https://github.com/NatBabi/Online-Banking" target="_blank" class="btn-github">GITHUB <i class="fa-brands fa-github"></i></a>
+              </div>
+            </div>
+          </div>
+
+          <div class="swiper-slide project-card">
+            <img src="Icons/Expense-Tracker.png" alt="Expense-Tracker" class="project-image" />
+            <div class="project-content">
+              <h3 class="project-title">EXPENSE TRACKER</h3>
+              <p class="project-desc">Empowers educators to manage and track e-learning content.</p>
+              <div class="project-tech">
+                <span class="tech-tag">PYTHON</span>
+                <span class="tech-tag">DJANGO</span>
+                <span class="tech-tag">POSTGRESQL</span>
+              </div>
+              <div class="project-actions">
+                <a href="#" class="btn-site">SITE <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                <a href="https://github.com/NatBabi/Expense-Tracker-CLI" target="_blank" class="btn-github">GITHUB <i class="fa-brands fa-github"></i></a>
+              </div>
+            </div>
+          </div>
+
+          <div class="swiper-slide project-card">
+            <img src="Icons/Workout-tracker.jpg" alt="Workout-tracker" class="project-image" />
+            <div class="project-content">
+              <h3 class="project-title">WORKOUT TRACKER</h3>
+              <p class="project-desc">A simple Node.js & Express-based web application to log and track workouts.</p>
+              <div class="project-tech">
+                <span class="tech-tag">AWS</span>
+                <span class="tech-tag">REACT</span>
+                <span class="tech-tag">EXPRESS</span>
+              </div>
+              <div class="project-actions">
+                <a href="#" class="btn-site">SITE <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                <a href="https://github.com/NatBabi/Workout-Tracker-Web-App" target="_blank" class="btn-github">GITHUB <i class="fa-brands fa-github"></i></a>
+              </div>
+            </div>
+          </div>
+
         </div>
-        <div class="project" onclick="openModal('Icons/Expense-Tracker.png', 'Expense-Tracker', 'Empowers educators to manage and track e-learning content.', 'Python, Django, PostgreSQL', 'https://github.com/NatBabi/Expense-Tracker-CLI')">
-          <img src="Icons/Expense-Tracker.png" alt="Expense-Tracker" />
-        </div>
-        <div class="project" onclick="openModal('Icons/Workout-tracker.jpg', 'Workout-tracker', 'A simple Node.js & Express-based web application to log and track workouts.', 'AWS, React, Express', 'https://github.com/NatBabi/Workout-Tracker-Web-App')">
-          <img src="Icons/Workout-tracker.jpg" alt="Workout-tracker" />
-        </div>
+        <div class="swiper-pagination"></div>
+      </div>
       </div>
 
-      <div class="skills" id="skills">
-        <div class="skills-grid">
-          <div class="skill-card"><i class="fa-brands fa-html5"></i><span>HTML5</span></div>
-          <div class="skill-card"><i class="fa-brands fa-css3-alt"></i><span>CSS3</span></div>
-          <div class="skill-card"><i class="fa-brands fa-js"></i><span>JavaScript</span></div>
-          <div class="skill-card"><i class="fa-brands fa-react"></i><span>React</span></div>
-          <div class="skill-card"><i class="fa-brands fa-node-js"></i><span>Node.js</span></div>
-          <div class="skill-card"><i class="fa-brands fa-php"></i><span>PHP</span></div>
-          <div class="skill-card"><i class="fa-brands fa-python"></i><span>Python</span></div>
-          <div class="skill-card"><i class="fa-brands fa-java"></i><span>Java</span></div>
+      <div class="pattern-bg">
+        <div class="section-header" id="skills">
+          <h2>SKILLS</h2>
+          <div class="section-divider"></div>
         </div>
+
+      <div class="skills">
+        <div class="tech-stack-container">
+          <div class="marker top-left">+</div>
+          <div class="marker top-right">+</div>
+          <div class="marker bottom-left">+</div>
+          <div class="marker bottom-right">+</div>
+          <div class="tech-icons">
+            <div class="tech-icon"><i class="fa-brands fa-html5"></i></div>
+            <div class="tech-icon"><i class="fa-brands fa-css3-alt"></i></div>
+            <div class="tech-icon text-icon">JS</div>
+            <div class="tech-icon"><i class="fa-brands fa-react"></i></div>
+            <div class="tech-icon"><i class="fa-brands fa-node-js"></i></div>
+            <div class="tech-icon"><i class="fa-brands fa-php"></i></div>
+            <div class="tech-icon"><i class="fa-brands fa-python"></i></div>
+            <div class="tech-icon"><i class="fa-brands fa-java"></i></div>
+            <div class="tech-icon"><i class="fa-brands fa-aws"></i></div>
+            <div class="tech-icon"><i class="fa-brands fa-docker"></i></div>
+            <div class="tech-icon"><i class="fa-brands fa-figma"></i></div>
+            <div class="tech-icon"><i class="fa-brands fa-github"></i></div>
+          </div>
+        </div>
+      </div>
       </div>
 
       <footer>&copy; Natnael Tilahun, 2026. All rights reserved.</footer>
@@ -137,6 +194,7 @@
     <!-- Toast notification -->
     <div id="toast" class="toast" aria-live="polite"></div>
 
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script src="Scripts.js"></script>
     
   </body>

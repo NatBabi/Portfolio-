@@ -98,17 +98,7 @@ function downloadCV() {
   showToast('Resume downloaded ✓');
 }
 
-// === Tab Switching ===
-function switchTab(tabName) {
-  document
-    .querySelectorAll('.tabs button')
-    .forEach((btn) => btn.classList.remove('active'));
-  document
-    .querySelectorAll('.portfolio, .skills')
-    .forEach((tab) => tab.classList.remove('active'));
-  document.querySelector(`#${tabName}`).classList.add('active');
-  event.target.classList.add('active');
-}
+
 
 // === Inline Form Validation ===
 function validateField(field, errorEl) {
@@ -205,5 +195,28 @@ document.addEventListener('DOMContentLoaded', () => {
       submitBtn.disabled = false;
       submitBtn.textContent = 'Send Message';
     }
+  });
+});
+
+// === Initialize Swiper Carousel ===
+document.addEventListener('DOMContentLoaded', () => {
+  const swiper = new Swiper('.portfolio-swiper', {
+    effect: 'coverflow',
+    grabCursor: true,
+    centeredSlides: true,
+    slidesPerView: 'auto',
+    coverflowEffect: {
+      rotate: 0,
+      stretch: 0,
+      depth: 200,
+      modifier: 1,
+      slideShadows: true,
+    },
+    pagination: {
+      el: '.swiper-pagination',
+      clickable: true,
+    },
+    loop: true,
+    initialSlide: 1
   });
 });
