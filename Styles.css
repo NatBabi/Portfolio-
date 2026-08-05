@@ -6,6 +6,11 @@
   font-family: 'Poppins', sans-serif;
 }
 
+h1, h2, h3, h4 {
+  font-family: 'Outfit', sans-serif;
+  letter-spacing: -0.02em;
+}
+
 /* Body Styles */
 body {
   background-color: #e5e5e5;
@@ -114,8 +119,9 @@ body.dark-mode .profile-pic-wrapper i {
 }
 
 .profile-text h2 {
-  font-size: 30px;
-  margin-bottom: 20px;
+  font-size: 36px;
+  font-weight: 700;
+  margin-bottom: 12px;
 }
 
 body.dark-mode .profile-text h2 {
@@ -123,7 +129,7 @@ body.dark-mode .profile-text h2 {
 }
 
 .profile-text p {
-  font-size: 18px;
+  font-size: 16px;
   color: #575757;
   margin-bottom: 16px;
 }
@@ -141,13 +147,13 @@ body.dark-mode .profile-text {
 .socials a {
   margin: 0 10px;
   color: inherit;
-  font-size: 20px;
+  font-size: 24px;
   text-decoration: none;
   transition: color 0.3s ease;
 }
 
 .socials i {
-  font-size: 20px;
+  font-size: 24px;
   color: #575757;
   cursor: pointer;
   transition: color 0.3s;
@@ -189,7 +195,7 @@ body.dark-mode .socials a:hover {
 }
 
 .settings-icon i {
-  font-size: 20px;
+  font-size: 24px;
   color: #333;
 }
 
@@ -220,7 +226,7 @@ body.dark-mode .settings-icon i {
 
 .stats div strong {
   display: block;
-  font-size: 32px;
+  font-size: 36px;
   font-weight: bold;
   color: inherit;
 }
@@ -260,7 +266,8 @@ body.dark-mode .settings-icon i {
   font-size: 16px;
   border: none;
   background-color: #fbd144;
-  color: white;
+  color: #1f2937;
+  font-weight: 600;
   border-radius: 8px;
   text-align: center;
   transition: background-color 0.3s ease, transform 0.2s ease;
@@ -268,6 +275,7 @@ body.dark-mode .settings-icon i {
 
 .download {
   background-color: #fbd144;
+  color: #1f2937;
   transition: background-color 0.3s, color 0.3s;
 }
 
@@ -399,45 +407,77 @@ body.dark-mode .tabs button:not(.active):hover {
 /* Skills Section */
 .skills {
   display: none;
-  justify-content: space-around;
-  align-items: center;
-  gap: 30px;
-  max-width: 600px;
+  max-width: 650px;
   width: 100%;
   margin-left: auto;
   margin-right: auto;
 }
 
 .skills.active {
+  display: block;
+}
+
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
+  gap: 16px;
+  width: 100%;
+}
+
+.skill-card {
   display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 18px 12px;
+  background-color: #ffffff;
+  border-radius: 12px;
+  border: 1px solid #e5e7eb;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
 }
 
-.skills i {
-  font-size: 50px;
-  color: #fff;
-  background-color: #facc15;
-  padding: 20px;
-  border-radius: 50%;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  text-align: center;
-  margin: 10px;
+.skill-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  border-color: #fbd144;
 }
 
-.skills i:hover {
-  transform: scale(1.2);
-  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+.skill-card i {
+  font-size: 32px;
+  color: #1f2937;
+  transition: transform 0.25s ease, color 0.25s ease;
 }
 
-body.dark-mode .skills i {
-  background-color: #ffe071;
-  color: #fff;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+.skill-card:hover i {
+  transform: scale(1.15);
+  color: #d97706;
 }
 
-body.dark-mode .skills i:hover {
-  background-color: #fbd044de;
-  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.4);
+.skill-card span {
+  font-size: 16px;
+  font-weight: 600;
+  color: #374151;
+}
+
+body.dark-mode .skill-card {
+  background-color: #374151;
+  border-color: #4b5563;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+body.dark-mode .skill-card:hover {
+  border-color: #ffe071;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.35);
+}
+
+body.dark-mode .skill-card i {
+  color: #ffe071;
+}
+
+body.dark-mode .skill-card span {
+  color: #f3f4f6;
 }
 
 /* Modal */
@@ -455,28 +495,46 @@ body.dark-mode .skills i:hover {
 }
 
 .modal-content {
-  background: #1f2937;
+  background: #ffffff;
   padding: 30px;
   border-radius: 10px;
   max-width: 600px;
   width: 90%;
   text-align: center;
   position: relative;
+  color: #1f2937;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+body.dark-mode .modal-content {
+  background: #1f2937;
   color: #e5e5e5;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
 }
 
 .modal-content h2 {
   font-size: 24px;
   margin-bottom: 20px;
+  color: #111827;
+  transition: color 0.3s ease;
+}
+
+body.dark-mode .modal-content h2 {
   color: #ffd700; /* Yellow highlight */
 }
 
 .modal-content img {
   max-width: 100%;
-  border-radius: 10px;
+  border-radius: 8px;
   margin-bottom: 20px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  border: 1px solid #e5e7eb;
+}
+
+body.dark-mode .modal-content img {
+  border-color: #374151;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
 }
 
 .modal-content p {
@@ -495,30 +553,62 @@ body.dark-mode .skills i:hover {
 .modal-content .badge {
   background-color: #2563eb; /* Blue badge background */
   color: #fff;
-  padding: 5px 10px;
+  padding: 5px 12px;
   border-radius: 20px;
   font-size: 14px;
   font-weight: 600;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
 }
 
 .modal-content .badge:hover {
-  transform: scale(1.1);
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.modal-content #modalGithubLink a {
+  display: inline-block;
+  margin-top: 5px;
+  color: #2563eb;
+  font-weight: 600;
+  text-decoration: none;
+  font-size: 16px;
+  transition: color 0.3s ease, text-decoration 0.3s ease;
+}
+
+.modal-content #modalGithubLink a:hover {
+  color: #1d4ed8;
+  text-decoration: underline;
+}
+
+body.dark-mode .modal-content #modalGithubLink a {
+  color: #60a5fa;
+}
+
+body.dark-mode .modal-content #modalGithubLink a:hover {
+  color: #93c5fd;
 }
 
 .modal-content .close-button {
   position: absolute;
-  top: 10px;
+  top: 15px;
   right: 15px;
   font-size: 24px;
   cursor: pointer;
-  color: #e5e5e5;
+  color: #6b7280;
   transition: color 0.3s ease;
+  line-height: 1;
 }
 
 .modal-content .close-button:hover {
+  color: #111827; 
+}
+
+body.dark-mode .modal-content .close-button {
+  color: #9ca3af;
+}
+
+body.dark-mode .modal-content .close-button:hover {
   color: #ffd700; /* Yellow highlight on hover */
 }
 
@@ -547,10 +637,121 @@ body.dark-mode .skills i:hover {
   transform: scale(0.95);
 }
 
-/* Footer */
+.btn-primary:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  transform: none;
+}
+
+/* Toast Notification */
+.toast {
+  position: fixed;
+  bottom: 30px;
+  left: 50%;
+  transform: translateX(-50%) translateY(100px);
+  background-color: #1f2937;
+  color: #fff;
+  padding: 14px 28px;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 500;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  z-index: 10000;
+}
+
+.toast.show {
+  opacity: 1;
+  transform: translateX(-50%) translateY(0);
+}
+
+body.dark-mode .toast {
+  background-color: #fbd144;
+  color: #1f2937;
+}
+
+/* Form Groups & Inline Validation */
+.form-group {
+  margin-bottom: 12px;
+  text-align: left;
+}
+
+.form-group label {
+  display: block;
+  font-size: 16px;
+  font-weight: 600;
+  margin-bottom: 6px;
+  color: #374151;
+}
+
+body.dark-mode .form-group label {
+  color: #d1d5db;
+}
+
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  padding: 12px 15px;
+  font-size: 16px;
+  border-radius: 6px;
+  border: 1px solid #d1d5db;
+  background-color: #f9fafb;
+  color: #111827;
+  font-family: inherit;
+  box-sizing: border-box;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+  resize: vertical;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  outline: none;
+  border-color: #fbd144;
+  box-shadow: 0 0 0 3px rgba(251, 209, 68, 0.3);
+  background-color: #ffffff;
+}
+
+body.dark-mode .form-group input,
+body.dark-mode .form-group textarea {
+  background-color: #374151;
+  border-color: #4b5563;
+  color: #f9fafb;
+}
+
+body.dark-mode .form-group input:focus,
+body.dark-mode .form-group textarea:focus {
+  background-color: #1f2937;
+  border-color: #fbd144;
+}
+
+.field-error {
+  display: block;
+  color: #dc2626;
+  font-size: 16px;
+  margin-top: 4px;
+  min-height: 18px;
+}
+
+body.dark-mode .field-error {
+  color: #f87171;
+}
+
+input.invalid,
+textarea.invalid {
+  border-color: #dc2626;
+  box-shadow: 0 0 0 2px rgba(220, 38, 38, 0.15);
+}
+
+body.dark-mode input.invalid,
+body.dark-mode textarea.invalid {
+  border-color: #f87171;
+  box-shadow: 0 0 0 2px rgba(248, 113, 113, 0.15);
+}
 footer {
   text-align: center;
-  font-size: 14px;
+  font-size: 16px;
   color: #575757;
   margin-top: 90px;
   margin-bottom: 5px;
@@ -569,7 +770,7 @@ footer {
 .stats {
   display: flex;
   justify-content: center;
-  font-size: 26px;
+  font-size: 16px;
   margin: 10px 0;
   margin-bottom: 20px;
   gap: 50px;
@@ -636,7 +837,7 @@ footer {
     flex: 1 1 45%;
     margin: 5px 0;
     padding: 14px;
-    font-size: 14px;
+    font-size: 16px;
   }
 
   .portfolio {

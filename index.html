@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Portfolio-Home</title>
     <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Outfit:wght@600;700;800&family=Poppins:wght@400;500;600&display=swap"
       rel="stylesheet"
     />
     <link
@@ -16,8 +16,8 @@
     <link rel="stylesheet" href="Styles.css" />
   </head>
   <body>
-    <div class="settings-icon" onclick="toggleDarkMode()">
-      <i class="fa-solid fa-gear"></i>
+    <div class="settings-icon" onclick="toggleDarkMode()" title="Toggle Dark/Light Mode" aria-label="Toggle Dark/Light Mode">
+      <i class="fa-solid fa-moon" id="themeIcon"></i>
     </div>
     <div class="container">
       <div class="profile">
@@ -33,7 +33,7 @@
 
           <div class="profile-text">
             <h2>Natnael Tilahun</h2>
-            <p>Computer Science Student</p>
+            <p>Computer Science Graduate</p>
             <div class="socials">
               <a href="https://www.linkedin.com/in/Nat-tile"><i class="fa-brands fa-linkedin"></i></a>
               <a href="https://github.com/NatBabi"><i class="fa-brands fa-github"></i></a>
@@ -59,28 +59,37 @@
         </div>
 
         <!-- Contact Modal -->
-      <div id="contactModal" class="modal">
+      <div id="contactModal" class="modal" role="dialog" aria-modal="true" aria-labelledby="contactModalTitle">
         <div class="modal-content">
-          <span class="close-button" onclick="closeModal()">×</span>
-          <h2>Contact Me</h2>
-          <form 
-            target="_blank" 
-            action="https://formsubmit.co/ntile312@gmail.com" 
-            method="POST"
-          >
-            <input type="text" placeholder="Your Name" name="name" required />
-            <input type="email" placeholder="Your Email" name="email" required />
-            <textarea placeholder="Your Message" rows="4" name="message"required></textarea>
-            <button type="submit" class="btn-primary">Send Message</button>
+          <span class="close-button" onclick="closeModal()" aria-label="Close">×</span>
+          <h2 id="contactModalTitle">Contact Me</h2>
+          <form id="contactForm">
+            <input type="hidden" name="_captcha" value="false" />
+            <div class="form-group">
+              <label for="contactName">Name</label>
+              <input type="text" placeholder="e.g. John Doe" name="name" id="contactName" required maxlength="100" />
+              <span class="field-error" id="nameError"></span>
+            </div>
+            <div class="form-group">
+              <label for="contactEmail">Email</label>
+              <input type="email" placeholder="e.g. john@example.com" name="email" id="contactEmail" required maxlength="254" />
+              <span class="field-error" id="emailError"></span>
+            </div>
+            <div class="form-group">
+              <label for="contactMessage">Message</label>
+              <textarea placeholder="How can I help you?" rows="4" name="message" id="contactMessage" required maxlength="2000"></textarea>
+              <span class="field-error" id="messageError"></span>
+            </div>
+            <button type="submit" class="btn-primary" id="submitBtn">Send Message</button>
           </form>
         </div>
       </div>
 
       <!-- Modal for Portfolio -->
-      <div id="portfolioModal" class="modal">
+      <div id="portfolioModal" class="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
         <div class="modal-content">
-          <span class="close-button" onclick="closeModal()">×</span>
-          <img id="modalImage" src="" alt="Project Image" />
+          <span class="close-button" onclick="closeModal()" aria-label="Close">×</span>
+          <img id="modalImage" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg'/%3E" alt="Project Image" />
           <h2 id="modalTitle">Project</h2>
           <p id="modalDescription">Project Description</p>
           <div id="modalTechStack" class="tech-stack"></div>
@@ -109,21 +118,24 @@
       </div>
 
       <div class="skills" id="skills">
-        <div>
-          <i class="fa-brands fa-html5 "></i>
-          <i class="fa-brands fa-css3 "></i>
-          <i class="fa-brands fa-js "></i>
-          <i class="fa-brands fa-react "></i>
-          <i class="fa-brands fa-node-js "></i>
-          <i class="fa-brands fa-php "></i>
-          <i class="fa-brands fa-python"></i>
-          <i class="fa-brands fa-java " ></i>
+        <div class="skills-grid">
+          <div class="skill-card"><i class="fa-brands fa-html5"></i><span>HTML5</span></div>
+          <div class="skill-card"><i class="fa-brands fa-css3-alt"></i><span>CSS3</span></div>
+          <div class="skill-card"><i class="fa-brands fa-js"></i><span>JavaScript</span></div>
+          <div class="skill-card"><i class="fa-brands fa-react"></i><span>React</span></div>
+          <div class="skill-card"><i class="fa-brands fa-node-js"></i><span>Node.js</span></div>
+          <div class="skill-card"><i class="fa-brands fa-php"></i><span>PHP</span></div>
+          <div class="skill-card"><i class="fa-brands fa-python"></i><span>Python</span></div>
+          <div class="skill-card"><i class="fa-brands fa-java"></i><span>Java</span></div>
         </div>
       </div>
 
-      <footer>&copy; Natnael Tilahun, 2025 All rights reserved</footer>
+      <footer>&copy; Natnael Tilahun, 2026. All rights reserved.</footer>
       </div>
     </div>
+
+    <!-- Toast notification -->
+    <div id="toast" class="toast" aria-live="polite"></div>
 
     <script src="Scripts.js"></script>
     
