@@ -220,3 +220,70 @@ document.addEventListener('DOMContentLoaded', () => {
     initialSlide: 1
   });
 });
+
+// === Scroll Spy — Active Nav Link ===
+document.addEventListener('DOMContentLoaded', () => {
+  const navLinks = document.querySelectorAll('.nav-links a');
+  const sections = [];
+
+  // Map each nav link to its target section
+  navLinks.forEach((link) => {
+    const href = link.getAttribute('href');
+    if (href.startsWith('#') && href !== '#') {
+      const target = document.querySelector(href);
+      if (target) {
+        sections.push({ link, target, href });
+      }
+    }
+  });
+
+  function setActiveLink(activeHref) {
+    navLinks.forEach((link) => {
+      link.classList.remove('active');
+      if (link.getAttribute('href') === activeHref) {
+        link.classList.add('active');
+      }
+    });
+  }
+
+  // Use IntersectionObserver for smooth tracking
+  const observerOptions = {
+    root: null,
+    rootMargin: '-40% 0px -40% 0px',
+    threshold: 0
+  };
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        const matchedSection = sections.find((s) => s.target === entry.target);
+        if (matchedSection) {
+          setActiveLink(matchedSection.href);
+        }
+      }
+    });
+  }, observerOptions);
+
+  sections.forEach((s) => observer.observe(s.target));
+
+  // Also check footer for "Contact" highlight
+  const footer = document.querySelector('.branded-footer');
+  if (footer) {
+    const footerObserver = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          setActiveLink('#contact');
+        }
+      });
+    }, { root: null, rootMargin: '0px', threshold: 0.3 });
+
+    footerObserver.observe(footer);
+  }
+
+  // Clear active state when scrolled to the very top (hero area)
+  window.addEventListener('scroll', () => {
+    if (window.scrollY < 200) {
+      navLinks.forEach((link) => link.classList.remove('active'));
+    }
+  }, { passive: true });
+});
