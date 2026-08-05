@@ -37,7 +37,7 @@
             <span class="status-dot"></span> AVAILABLE FOR NEW PROJECTS
           </div>
           <h1 class="hero-title">
-            HI, I'M <img src="Icons/ProfilePicturepng.jpg" alt="Profile Picture" class="inline-profile-pic" /> NATNAEL<br>TILAHUN
+            HI, I'M <span class="profile-pic-wrapper"><img src="Icons/ProfilePicturepng.jpg" alt="Profile Picture" class="inline-profile-pic" /></span> NATNAEL<br>TILAHUN
           </h1>
           <p class="hero-subtitle">Creative Backend & IT Support Guy</p>
           <div class="socials hero-socials">
@@ -62,30 +62,96 @@
           </button>
         </div>
 
-        <!-- Contact Modal -->
-      <div id="contactModal" class="modal" role="dialog" aria-modal="true" aria-labelledby="contactModalTitle">
-        <div class="modal-content">
-          <span class="close-button" onclick="closeModal()" aria-label="Close">×</span>
-          <h2 id="contactModalTitle">Contact Me</h2>
-          <form id="contactForm">
-            <input type="hidden" name="_captcha" value="false" />
-            <div class="form-group">
-              <label for="contactName">Name</label>
-              <input type="text" placeholder="e.g. John Doe" name="name" id="contactName" required maxlength="100" />
-              <span class="field-error" id="nameError"></span>
+      <!-- Contact Modal -->
+      <div id="contactModal" class="modal contact-modal-wrapper" role="dialog" aria-modal="true" aria-labelledby="contactModalTitle">
+        <div class="contact-modal-card">
+          <button class="close-button" onclick="closeModal()" aria-label="Close modal">×</button>
+          
+          <div class="contact-grid">
+            <!-- Left Info Column -->
+            <div class="contact-info-col">
+              
+              <!-- Item 1: Email -->
+              <div class="info-item">
+                <div class="info-icon-box">
+                  <i class="fa-regular fa-envelope"></i>
+                </div>
+                <div class="info-details">
+                  <span class="info-label">EMAIL</span>
+                  <div class="info-value-wrap">
+                    <span class="info-value" id="infoEmail">ntile312@gmail.com</span>
+                    <button type="button" class="copy-btn" onclick="copyContactText('ntile312@gmail.com', 'Email')" title="Copy Email">
+                      <i class="fa-regular fa-copy"></i>
+                    </button>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Item 2: Phone (Featured Card Style) -->
+              <div class="info-item featured-info-item">
+                <div class="info-icon-box yellow-icon-box">
+                  <i class="fa-solid fa-phone"></i>
+                </div>
+                <div class="info-details">
+                  <span class="info-label">PHONE</span>
+                  <div class="info-value-wrap">
+                    <span class="info-value" id="infoPhone">0967033862</span>
+                    <button type="button" class="copy-btn" onclick="copyContactText('0967033862', 'Phone number')" title="Copy Phone">
+                      <i class="fa-regular fa-copy"></i>
+                    </button>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Item 3: Telegram -->
+              <div class="info-item">
+                <div class="info-icon-box">
+                  <i class="fa-brands fa-telegram"></i>
+                </div>
+                <div class="info-details">
+                  <span class="info-label">TELEGRAM</span>
+                  <div class="info-value-wrap">
+                    <span class="info-value" id="infoTelegram">@bojaw112</span>
+                    <button type="button" class="copy-btn" onclick="copyContactText('@bojaw112', 'Telegram handle')" title="Copy Telegram handle">
+                      <i class="fa-regular fa-copy"></i>
+                    </button>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Item 4: Availability -->
+              <div class="info-item">
+                <div class="info-icon-box availability-icon-box">
+                  <i class="fa-solid fa-check"></i>
+                </div>
+                <div class="info-details">
+                  <span class="info-label">AVAILABILITY</span>
+                  <span class="info-value availability-text">Available for new projects</span>
+                </div>
+              </div>
+
             </div>
-            <div class="form-group">
-              <label for="contactEmail">Email</label>
-              <input type="email" placeholder="e.g. john@example.com" name="email" id="contactEmail" required maxlength="254" />
-              <span class="field-error" id="emailError"></span>
+
+            <!-- Right Form Column -->
+            <div class="contact-form-col">
+              <form id="contactForm">
+                <input type="hidden" name="_captcha" value="false" />
+                <div class="form-group">
+                  <input type="text" placeholder="Your Name" name="name" id="contactName" required maxlength="100" />
+                  <span class="field-error" id="nameError"></span>
+                </div>
+                <div class="form-group">
+                  <input type="email" placeholder="Your Email" name="email" id="contactEmail" required maxlength="254" />
+                  <span class="field-error" id="emailError"></span>
+                </div>
+                <div class="form-group">
+                  <textarea placeholder="message...." rows="4" name="message" id="contactMessage" required maxlength="2000"></textarea>
+                  <span class="field-error" id="messageError"></span>
+                </div>
+                <button type="submit" class="contact-submit-btn" id="submitBtn">SEND MESSAGE</button>
+              </form>
             </div>
-            <div class="form-group">
-              <label for="contactMessage">Message</label>
-              <textarea placeholder="How can I help you?" rows="4" name="message" id="contactMessage" required maxlength="2000"></textarea>
-              <span class="field-error" id="messageError"></span>
-            </div>
-            <button type="submit" class="btn-primary" id="submitBtn">Send Message</button>
-          </form>
+          </div>
         </div>
       </div>
 

@@ -1,11 +1,29 @@
 // === Theme Toggle ===
 function toggleDarkMode() {
   const isDark = document.body.classList.toggle('dark-mode');
+  const themeBtn = document.querySelector('.settings-icon');
   const themeIcon = document.getElementById('themeIcon');
+  
+  if (themeBtn) {
+    themeBtn.classList.add('theme-toggle-spin');
+    setTimeout(() => themeBtn.classList.remove('theme-toggle-spin'), 600);
+  }
+  
   if (themeIcon) {
     themeIcon.className = isDark ? 'fa-solid fa-sun' : 'fa-solid fa-moon';
   }
+  
+  localStorage.setItem('portfolio-theme', isDark ? 'dark' : 'light');
 }
+
+document.addEventListener('DOMContentLoaded', () => {
+  const savedTheme = localStorage.getItem('portfolio-theme');
+  if (savedTheme === 'dark') {
+    document.body.classList.add('dark-mode');
+    const themeIcon = document.getElementById('themeIcon');
+    if (themeIcon) themeIcon.className = 'fa-solid fa-sun';
+  }
+});
 
 // === Portfolio Modal ===
 function openModal(imageSrc, title, description, techStack, githubLink) {
@@ -45,6 +63,18 @@ function openContactModal() {
   if (modal) {
     clearFormErrors();
     showModal(modal);
+  }
+}
+
+function copyContactText(text, label) {
+  if (navigator.clipboard) {
+    navigator.clipboard.writeText(text).then(() => {
+      showToast(`${label} copied to clipboard!`);
+    }).catch(() => {
+      showToast(`Copied: ${text}`);
+    });
+  } else {
+    showToast(`Copied: ${text}`);
   }
 }
 
