@@ -28,6 +28,7 @@ npx serve .
 * **Features**:
   * 🌓 **Dark / Light Mode Theme Switching**: Instant toggle with state persistence.
   * 🎠 **Swiper Project Carousel**: Smooth, touch-friendly sliding through project cards.
+  * 🪞 **Glassmorphic UI**: Beautiful glass-effect cards and sections (like the new About section).
   * 📄 **Direct CV Download**: One-click resume download functionality.
   * 📩 **Contact Modal**: FormSubmit-integrated contact modal for instant email delivery.
   * 📱 **Fully Responsive**: Optimized for desktop, tablet, and mobile viewports.
