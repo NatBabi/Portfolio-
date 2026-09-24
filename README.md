@@ -7,7 +7,7 @@
 ## ⚡ 30-Second Overview
 
 ### ❓ What is this project?
-This is the personal portfolio website for **Natnael Tilahun** (Software Developer & Computer Science Student). It serves as a modern digital resume and project showcase featuring custom UI themes, interactive project detail modals, technical skill highlights, direct resume downloading, and a functional contact modal.
+This is the personal portfolio website for **Natnael Tilahun** — a full-stack developer based in Addis Ababa. It serves as a modern digital resume and project showcase featuring custom UI themes, a Swiper-based project carousel, technical skill highlights, direct resume downloading, and a functional contact modal.
 
 ### 🏃 How do I run it?
 No complex setup, build tools, or node modules required!
@@ -24,12 +24,11 @@ npx serve .
 ```
 
 ### 🛠️ What technologies & features does it demonstrate?
-* **Technologies**: HTML5 (Semantic markup), Vanilla CSS3 (Flexbox, Grid, CSS Variables, Glassmorphism), Vanilla JavaScript (DOM manipulation, dynamic modal rendering, tab switching), Font Awesome 6, Google Fonts.
+* **Technologies**: HTML5 (Semantic markup), Vanilla CSS3 (Flexbox, Grid, CSS Variables, Glassmorphism), Vanilla JavaScript (DOM manipulation, Swiper carousel), Font Awesome 6, Google Fonts, Swiper.js.
 * **Features**:
   * 🌓 **Dark / Light Mode Theme Switching**: Instant toggle with state persistence.
-  * 📑 **Interactive Tab Navigation**: Smooth switching between Portfolio Projects and Technical Skills.
-  * 🪟 **Dynamic Project Modals**: Clickable project cards rendering details, tech stack badges, and GitHub links.
-  * 📄 **Direct CV Download**: One-click resume download functionality (`Natnael_Tilahun_Resume.pdf`).
+  * 🎠 **Swiper Project Carousel**: Smooth, touch-friendly sliding through project cards.
+  * 📄 **Direct CV Download**: One-click resume download functionality.
   * 📩 **Contact Modal**: FormSubmit-integrated contact modal for instant email delivery.
   * 📱 **Fully Responsive**: Optimized for desktop, tablet, and mobile viewports.
 
@@ -58,19 +57,34 @@ npx serve .
 
 ---
 
+## 🗂️ Featured Projects
+
+| Project | Description | Tech Stack | Links |
+| :--- | :--- | :--- | :--- |
+| **Online Banking** | Full-stack banking app with authentication, account management, fund transfers, and transaction history. | Java, MySQL, Bootstrap, JavaScript | [GitHub](https://github.com/NatBabi/Online-Banking) |
+| **Expense Tracker** | CLI tool to add, delete, and list personal expenses with monthly budgeting and data export. | Node.js, CLI | [GitHub](https://github.com/NatBabi/Expense-Tracker-CLI) |
+| **Workout Tracker** | Node.js & Express web app to log and track workouts. | AWS, React, Express | [GitHub](https://github.com/NatBabi/Workout-Tracker-Web-App) |
+| **CRMP (BunaCore)** | Collaborative research management platform with shared TypeScript codebase and agreed API contracts. | TypeScript, React, PostgreSQL | [Site](https://crmp-flow.vercel.app/) · [GitHub](https://github.com/BunaCore) |
+| **OmniOptimize** | Live SEO optimization tool with integrated CodeRabbit code-analysis and PageSpeed SEO-analysis. | Next.js, Node.js, REST API | [Site](https://omni-optimize.vercel.app/) · [GitHub](https://github.com/andymarrow/OmniOptimize) |
+
+---
+
 ## 📁 Repository Structure
 
 ```
 Portfolio-/
 ├── index.html            # Main HTML document & semantic structure
 ├── Styles.css            # Complete styling, CSS custom variables & dark theme
-├── Scripts.js           # Theme toggle, tab switching, and modal logic
+├── Scripts.js            # Theme toggle, Swiper init, and modal logic
 ├── My-Resume.pdf         # CV downloadable file
+├── .gitignore            # Git ignored files and folders
 ├── Icons/                # Project thumbnails & profile image assets
 │   ├── ProfilePicturepng.jpg
 │   ├── Online_Banking.png
 │   ├── Expense-Tracker.png
-│   └── Workout-tracker.jpg
+│   ├── Workout-tracker.jpg
+│   ├── CRMP.png
+│   └── OmniOptimize.png
 └── screenshots/          # Repository UI preview screenshots
     ├── light-mode.png
     ├── dark-mode.png
@@ -86,7 +100,8 @@ Portfolio-/
 | Category | Technologies Used |
 | :--- | :--- |
 | **Frontend Core** | HTML5, Vanilla CSS3, JavaScript (ES6+) |
-| **Icons & Fonts** | Font Awesome 6.5.0, Google Fonts (Inter, Poppins) |
+| **Icons & Fonts** | Font Awesome 6.5.0, Google Fonts (Outfit, Poppins) |
+| **Carousel** | Swiper.js 11 |
 | **Form Backend** | FormSubmit API Integration |
 | **Layout Design** | CSS Flexbox, CSS Grid, Responsive Media Queries |
 
@@ -94,7 +109,7 @@ Portfolio-/
 
 ## 👨‍💻 About the Developer
 
-**Natnael Tilahun** — Software Developer & Computer Science Student at Adama Science and Technology University. Experienced in backend development (Node.js, NestJS, Express, Python/Django) and full-stack MERN projects.
+**Natnael Tilahun** — Full-stack developer based in Addis Ababa, working across React, Next.js, Node.js, TypeScript, and PHP/Laravel. Experienced in building and shipping live projects end-to-end — from database design to UI — including a collaborative research platform and a banking system with real transaction logic.
 
 * 🌐 **GitHub**: [@NatBabi](https://github.com/NatBabi)
 * 💼 **LinkedIn**: [Natnael Tilahun](https://www.linkedin.com/in/Nat-tile)
