@@ -45,11 +45,11 @@ npx serve .
 ### 🌙 Dark Mode Homepage
 ![Dark Mode Homepage](screenshots/dark-mode.png)
 
-### 💻 Interactive Project Detail Modal
-![Project Modal](screenshots/project-modal.png)
+### 🎠 Swiper Projects Carousel
+![Projects Carousel](screenshots/projects-carousel.png)
 
-### 🛠️ Technical Skills Tab
-![Skills Tab](screenshots/skills-tab.png)
+### 🛠️ Technical Skills Section
+![Skills Section](screenshots/skills-section.png)
 
 ### 📩 Contact Modal
 ![Contact Modal](screenshots/contact-modal.png)
